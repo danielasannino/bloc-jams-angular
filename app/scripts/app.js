@@ -5,17 +5,13 @@
              enabled: true,
              requireBase: false
          });
+         
          $stateProvider
-         .state('landing', {
-             url: '/',
-             controller: 'LandingCtrl as landing',
-             templateUrl: '/templates/landing.html'
-         })
-         $stateProvider
-         .state('landing', {
-             url: '/',
-             templateUrl: '/templates/landing.html'
-         });
+             .state('landing', {
+                 url: '/',
+                 controller: 'LandingCtrl as landing',
+                 templateUrl: '/templates/landing.html'
+             });
      }
  
      angular

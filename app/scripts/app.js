@@ -11,13 +11,14 @@
             url: '/',
             controller: 'LandingCtrl as landing',
             templateUrl: '/templates/landing.html'
-        });
-        .state('album', {
-            url: '/',
+        })
+            .state('album', {
+            url: '/collection',
             templateUrl: '/templates/album.html'
         })
             .state('collection', {
             url: '/',
+            controller: 'CollectionCtrl as collection',
             templateUrl: '/templates/collection.html'
         });
     }

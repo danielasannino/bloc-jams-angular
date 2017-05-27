@@ -42,7 +42,10 @@
                     albums.push(this.getAlbum());
             }
              return albums;
+
     };
+         };
+         
          return Fixtures;
      }
  

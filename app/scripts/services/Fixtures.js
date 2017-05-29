@@ -42,14 +42,11 @@
                     albums.push(this.getAlbum());
             }
              return albums;
-
     };
-         };
-         
          return Fixtures;
      }
  
      angular
          .module('blocJams')
          .factory('Fixtures', Fixtures);
- })();
+})();

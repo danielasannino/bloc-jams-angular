@@ -26,8 +26,10 @@
         */
         var setSong = function(song) {
         	if (currentBuzzObject) {
-        		currentBuzzObject.stop();
-        		SongPlayer.currentSong.playing = null;
+        		stopSong(song);
+                // currentBuzzObject.stop();
+                // SongPlayer.currentSong.playing = null;
+        		
         	}
 
         	currentBuzzObject = new buzz.sound(song.audioUrl, {
@@ -47,12 +49,26 @@
          var playSong = function(song) {
              currentBuzzObject.play();
              song.playing = true;
+             console.log(currentAlbum.artist);
          };
+       
+       /** 
+        * @function stopSong
+        * @desc Stops playing the currently selected song and clears the song.playing Boolean flag
+        * @param {Object} song
+        */
+       
+       var stopSong = function(song) {
+           currentBuzzObject.stop();
+           SongPlayer.currentSong.playing = null; 
+       };
+       
+       
        /**
-+        * @desc Album index number of current song
-+        * @type {Number}
-+        * @param {Object} song
-+        */
+        * @desc Album index number of current song
+        * @type {Number}
+        * @param {Object} song
+        */
        
         var getSongIndex = function(song) {
             return currentAlbum.songs.indexOf(song);
@@ -107,14 +123,34 @@
             currentSongIndex--;
 
             if (currentSongIndex < 0) {
-                currentBuzzObject.stop();
-                SongPlayer.currentSong.playing = null;
+                stopSong(song);
             } else {
                 var song = currentAlbum.songs[currentSongIndex];
                 setSong(song);
                 playSong(song);
             }
         };
+       
+       SongPlayer.next = function() {
+           var currentSongIndex = getSongIndex(SongPlayer.currentSong);
+           currentSongIndex++;
+           
+           console.log(Fixtures.getAlbum().songs);
+           console.log("currentSongIndex is " + currentSongIndex);
+           
+           if (currentSongIndex >= Fixtures.getAlbum().songs.length) {
+               console.log("Inside currentSongIndex > songs.length conditional.");
+               stopSong(song);
+               // currentBuzzObject.stop();
+               // SongPlayer.currentSong.playing = null;
+
+           } else {
+               console.log("Inside 'else' segment of currentSongIndex > songs.length conditional.");
+               var song = currentAlbum.songs[currentSongIndex];
+               setSong(song);
+               playSong(song);
+           }
+       };
 
         return SongPlayer;
     }

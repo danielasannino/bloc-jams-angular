@@ -165,6 +165,12 @@
                setSong(song);
                playSong(song);
            }
+           
+           if (SongPlayer.currentTime = SongPlayer.currentSong.duration) {
+               currentSongIndex++;
+               setSong(song);
+               playSong(song);
+           }
        };
        
     /**

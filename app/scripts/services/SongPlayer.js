@@ -165,12 +165,6 @@
                setSong(song);
                playSong(song);
            }
-           
-           if (SongPlayer.currentTime = SongPlayer.currentSong.duration) {
-               currentSongIndex++;
-               setSong(song);
-               playSong(song);
-           }
        };
        
     /**
@@ -202,5 +196,5 @@
  
     angular
         .module('blocJams')
-        .factory('SongPlayer', ['$rootScope', 'Fixtures', SongPlayer]);
+        .service('SongPlayer', ['$rootScope', 'Fixtures', SongPlayer]);
 })();

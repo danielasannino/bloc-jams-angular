@@ -1,5 +1,9 @@
 ## Bloc Frontend Project Starter
 
+Bloc Jams is a streaming music player with media queries to determine the viewer's display dimensions and a responsive, grid-based user interface to provide an optimized look for various viewing device display sizes.
+
+Languages & libraries: HTML, CSS, JavaScript, Angular JS
+
 A starter application for student projects in Bloc's [Frontend Web Development Course](https://www.bloc.io/frontend-development-bootcamp).
 
 ## Pull Down the Code
